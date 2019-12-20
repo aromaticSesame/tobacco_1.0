@@ -85,9 +85,9 @@ def __edge_properties(arg):
 		if line.startswith('_ccdc_geom_bond_type'): # grabbing connectivity
 			grab_connectivity = True
 			continue
-		if line.startswith(' '):
+		if line.startswith(' '): #K.L. - condition when the line is of no interest
 			grab_connectivity = False
-		if grab_connectivity:
+		if grab_connectivity: #K.L. - if grab_connectivity flag has been triggered by previous line
 			connectivity_info.append(line) 
 	for line in atom_info:
 		split = line.split()

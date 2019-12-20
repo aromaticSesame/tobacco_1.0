@@ -47,7 +47,7 @@ for template in template_list:
     template_now = open("templates/"+template, "r") 
     
     template_file = template_now.read()
-    tf = template_file.split()
+    tf = template_file.split() #lines in template file
     
     #read topology
     topology = tf[1]
@@ -71,9 +71,9 @@ for template in template_list:
        types_edges = int(tf[22])
        
 
-       type_edge_one = int(tf[27])
-       n_edge_one = int(tf[28])
-       length_edge_one = 2 * float(tf[29]) 
+       type_edge_one = int(tf[27]) #.acs. 11
+       n_edge_one = int(tf[28]) #.acs. 6
+       length_edge_one = 2 * float(tf[29]) #.acs. 2 * 5.0
           
 
 
@@ -201,7 +201,7 @@ for template in template_list:
 
        reg_node=[]
        for i in range(len(node_list)):
-           if fnmatch.fnmatch(node_list[i], 'sym_'+str(sym_vertex_one)+'_'+'*'):
+           if fnmatch.fnmatch(node_list[i], 'sym_'+str(sym_vertex_one)+'_'+'*'): #.acs. will print out sym_7_
               reg_node.append(node_list[i])
        reg_node=np.asarray(reg_node)#Identify appropriate nodes for this particular topology
        for i in range(len(reg_node)):
